@@ -88,8 +88,11 @@ function processLastItem(stringList, callback) {
  * should return 1000.
 */
 function processSum(numberList, callback) {
-  return callback(numberList);
+  return callback(numberList.reduce((accum, item) => {
+    return accum + item;
+  }, 0));
 }
+
 /**
  * ### Challenge `processProduct`
  * 
@@ -108,8 +111,9 @@ function processSum(numberList, callback) {
  * [2] Invoking `processProduct` passing 25 and 0 and `(num) => num + 1000`,
  * should return 1000.
 */
-function processProduct(/* CODE HERE */) {
-  /* CODE HERE */
+function processProduct(num1, num2, callback) {
+  let product = num1 * num2;
+  return callback(product);
 }
 
 /**
@@ -133,7 +137,9 @@ function processProduct(/* CODE HERE */) {
  * should return "sad".
 */
 function processContains(item, list, callback) {
-  return callback ()
+   let bool = list.includes(item);
+   return callback(bool);
+
 }
 
 /**
