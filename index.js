@@ -88,9 +88,10 @@ function processLastItem(stringList, callback) {
  * should return 1000.
 */
 function processSum(numberList, callback) {
-  return callback(numberList.reduce((accum, item) => {
+  let sum = numberList.reduce((accum, item) => {
     return accum + item;
-  }, 0));
+  }, 0)
+  return callback(sum);
 }
 
 /**
